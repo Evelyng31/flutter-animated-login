@@ -66,11 +66,7 @@ linter:
     - empty_statements
     - exhaustive_cases
     - file_names
-<<<<<<< HEAD
-    - flutter_style_todos
-=======
     # - flutter_style_todos
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     - hash_and_equals
     - implementation_imports
     - invariant_booleans

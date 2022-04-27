@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
-import 'package:animated_login/animated_login.dart';
-
-import 'package:async/async.dart';
-=======
 import 'package:animated_login/animated_login.dart';
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 
 import 'dialog_builders.dart';
 import 'login_functions.dart';
@@ -97,31 +90,19 @@ class _LoginScreenState extends State<LoginScreen> {
       languageOptions: _languageOptions,
       selectedLanguage: language,
       initialMode: currentMode,
-<<<<<<< HEAD
-      onAuthModeChange: (AuthMode newMode) => currentMode = newMode,
-      showSignUpButton: false,
-=======
       onAuthModeChange: (AuthMode newMode) async {
         currentMode = newMode;
         await _operation?.cancel();
       },
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     );
   }
 
   Future<String?> _authOperation(Future<String?> func) async {
-<<<<<<< HEAD
-    _operation = CancelableOperation.fromFuture(func);
-    final String? res = await _operation?.valueOrCancellation();
-    if (_operation?.isCompleted == true && res == null) {
-      DialogBuilder(context).showResultDialog('Successful.');
-=======
     await _operation?.cancel();
     _operation = CancelableOperation.fromFuture(func);
     final String? res = await _operation?.valueOrCancellation();
     if (_operation?.isCompleted == true) {
       DialogBuilder(context).showResultDialog(res ?? 'Successful.');
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     }
     return res;
   }
@@ -156,11 +137,8 @@ class _LoginScreenState extends State<LoginScreen> {
           languageDialogTheme: LanguageDialogTheme(
               optionMargin: EdgeInsets.symmetric(horizontal: 80)),
         ),
-<<<<<<< HEAD
-=======
         loadingSocialButtonColor: Colors.blue,
         loadingButtonColor: Colors.white,
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
       );
 
   /// You can adjust the colors, text styles, button styles, borders
@@ -174,8 +152,6 @@ class _LoginScreenState extends State<LoginScreen> {
         // actionButtonStyle: ButtonStyle(
         //   foregroundColor: MaterialStateProperty.all(Colors.blue),
         // ),
-<<<<<<< HEAD
-=======
         // animatedComponentOrder: const <AnimatedComponent>[
         //   AnimatedComponent(component: LoginComponents.logo),
         //   AnimatedComponent(component: LoginComponents.title),
@@ -189,7 +165,6 @@ class _LoginScreenState extends State<LoginScreen> {
         //   AnimatedComponent(component: LoginComponents.changeActionButton),
         //   AnimatedComponent(component: LoginComponents.actionButton),
         // ],
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
       );
 
   LoginTexts get _loginTexts => LoginTexts(
@@ -222,10 +197,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ];
 
   Future<String?> _socialCallback(String type) async {
-<<<<<<< HEAD
-=======
     await _operation?.cancel();
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     _operation = CancelableOperation.fromFuture(
         LoginFunctions(context).socialLogin(type));
     final String? res = await _operation?.valueOrCancellation();

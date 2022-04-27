@@ -1,52 +1,5 @@
 part of '../../animated_login.dart';
 
-<<<<<<< HEAD
-class _LogoAndTexts extends StatelessWidget {
-  /// Column of logo and welcome texts.
-  const _LogoAndTexts({required this.logo, Key? key}) : super(key: key);
-
-  /// Logo widget.
-  final Widget? logo;
-
-  @override
-  Widget build(BuildContext context) => Column(
-        children: <Widget>[
-          if (logo != null) _logo(context),
-          _title(context),
-          SizedBox(
-              height: context.read<LoginTheme>().titleDescriptionSpace ??
-                  DynamicSize(context).height *
-                      (context.read<LoginTheme>().isLandscape ? 6 : 1.8)),
-          _description(context),
-        ],
-      );
-
-  Widget _title(BuildContext context) {
-    final LoginTexts loginTexts = context.read<LoginTexts>();
-    return BaseText(
-      context.select<Auth, bool>((Auth auth) => auth.isReverse)
-          ? loginTexts.welcomeBack
-          : loginTexts.welcome,
-      style: TextStyles(context)
-          .titleStyle(color: Colors.white)
-          .merge(context.read<LoginTheme>().welcomeTitleStyle),
-    );
-  }
-
-  Widget _description(BuildContext context) {
-    final LoginTexts loginTexts = context.read<LoginTexts>();
-    return NotFittedText(
-      context.select<Auth, bool>((Auth auth) => auth.isReverse)
-          ? loginTexts.welcomeBackDescription
-          : loginTexts.welcomeDescription,
-      style: TextStyles(context)
-          .bodyStyle()
-          .merge(context.read<LoginTheme>().welcomeDescriptionStyle),
-    );
-  }
-
-  Widget _logo(BuildContext context) {
-=======
 class _Title extends StatelessWidget {
   /// Column of logo and welcome texts.
   const _Title({Key? key}) : super(key: key);
@@ -100,24 +53,16 @@ class _Logo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     final DynamicSize dynamicSize = DynamicSize(context);
     final LoginTheme loginTheme = context.read<LoginTheme>();
     return Container(
       constraints: BoxConstraints.tight(loginTheme.logoSize ??
           Size.fromHeight(
-<<<<<<< HEAD
-              dynamicSize.responsiveSize * (loginTheme.isLandscape ? 26 : 30))),
-      padding: loginTheme.logoPadding ??
-          EdgeInsets.only(
-              bottom: dynamicSize.height * (loginTheme.isLandscape ? 4 : 2)),
-=======
               dynamicSize.responsiveSize * (loginTheme.isLandscape ? 30 : 25))),
       padding: loginTheme.logoPadding ??
           EdgeInsets.symmetric(
               vertical:
                   dynamicSize.height * (loginTheme.isLandscape ? 2.8 : .8)),
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
       child: logo,
     );
   }
@@ -163,17 +108,6 @@ class _ChangeActionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final LoginTexts loginTexts = context.read<LoginTexts>();
-<<<<<<< HEAD
-    return showButtonText
-        ? Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              _changeActionTitle(context, loginTexts),
-              _changeActionGesture(context, animate)
-            ],
-          )
-        : _changeActionTitle(context, loginTexts);
-=======
     final LoginTheme loginTheme = context.watch<LoginTheme>();
     return Padding(
       padding: loginTheme.changeActionPadding ??
@@ -190,7 +124,6 @@ class _ChangeActionTitle extends StatelessWidget {
             )
           : _changeActionTitle(context, loginTexts),
     );
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   }
 
   Widget _changeActionTitle(BuildContext context, LoginTexts loginTexts) =>

@@ -2,13 +2,9 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/enums/auth_mode.dart';
-<<<<<<< HEAD
-import '../models/models_shelf.dart';
-=======
 import '../constants/enums/sign_up_modes.dart';
 import '../models/models_shelf.dart';
 import '../utils/validators.dart';
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 
 /// It is called on auth mode changes,
 /// triggered by [Auth.switchAuth] method.
@@ -18,10 +14,6 @@ typedef AuthModeChangeCallback = void Function(AuthMode authMode);
 class Auth extends ChangeNotifier {
   /// Manages the state related to the authentication modes.
   Auth({
-<<<<<<< HEAD
-    this.socialLogins = const <SocialLogin>[],
-    this.onAuthModeChange,
-=======
     required GlobalKey<FormState> formKey,
     this.socialLogins = const <SocialLogin>[],
     this.onAuthModeChange,
@@ -36,14 +28,10 @@ class Auth extends ChangeNotifier {
     TextEditingController? emailController,
     TextEditingController? passwordController,
     TextEditingController? confirmPasswordController,
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     AuthMode? initialMode,
     LoginCallback? onLogin,
     SignupCallback? onSignup,
     ForgotPasswordCallback? onForgotPassword,
-<<<<<<< HEAD
-  }) {
-=======
     SignUpModes? signUpMode,
   })  : _formKey = formKey,
         _signUpMode = signUpMode ?? SignUpModes.both,
@@ -56,7 +44,6 @@ class Auth extends ChangeNotifier {
         _nameValidator = nameValidator,
         _emailValidator = emailValidator,
         _passwordValidator = passwordValidator {
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     _onLogin = onLogin ?? _defaultLoginFunc;
     _onSignup = onSignup ?? _defaultSignupFunc;
     _onForgotPassword = onForgotPassword ?? _defaultForgotPassFunc;
@@ -158,8 +145,6 @@ class Auth extends ChangeNotifier {
 
   /// Cancelable operation for auth operations.
   CancelableOperation<dynamic>? cancelableOperation;
-<<<<<<< HEAD
-=======
 
   final TextEditingController _nameController;
   final TextEditingController _emailController;
@@ -287,5 +272,4 @@ class Auth extends ChangeNotifier {
                 ),
           ).password)
       : null;
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 }

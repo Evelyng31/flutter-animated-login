@@ -61,10 +61,7 @@ class Validators {
         return validations[i](text);
       }
     }
-<<<<<<< HEAD
-=======
     return null;
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   }
 
   /// Checks whether the given [text] is longer than or equal to the [length].

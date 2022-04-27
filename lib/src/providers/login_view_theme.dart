@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
-<<<<<<< HEAD
-import '../models/animated_dialog_theme.dart';
-=======
 import '../../animated_login.dart';
 import '../constants/enums/animation_type.dart';
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 
 /// [LoginViewTheme] is the provider for all design/theme related data.
 class LoginViewTheme {
@@ -71,8 +67,6 @@ class LoginViewTheme {
     this.showLoadingSocialButton = true,
     this.loadingButtonColor,
     this.loadingSocialButtonColor,
-<<<<<<< HEAD
-=======
     this.titlePadding,
     this.descriptionPadding,
     this.changeActionPadding,
@@ -106,7 +100,6 @@ class LoginViewTheme {
           component: LoginComponents.actionButton,
           animationType: AnimationType.left),
     ],
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   })  : assert(formWidthRatio >= 50, "Form width ratio should be at least 50."),
         assert(formElementsSpacing == null || formElementsSpacing <= 70,
             "Spacing between the form elements cannot be more than 70."),
@@ -229,11 +222,7 @@ class LoginViewTheme {
   /// Padding of the welcome part widget.
   final EdgeInsets? welcomePadding;
 
-<<<<<<< HEAD
-  /// Padding of the form part widget.
-=======
   /// Padding around the form elements.
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   final EdgeInsets? formPadding;
 
   /// Size of the logo in the welcome part.
@@ -296,8 +285,6 @@ class LoginViewTheme {
   /// Color of the loading indicator on a social login button.
   final Color? loadingSocialButtonColor;
 
-<<<<<<< HEAD
-=======
   /// Custom padding around the title.
   final EdgeInsets? titlePadding;
 
@@ -325,7 +312,6 @@ class LoginViewTheme {
   /// Order of the screen components.
   final List<AnimatedComponent> animatedComponentOrder;
 
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   /// Creates a copy login view theme with the given properties.
   LoginViewTheme copyWith({
     TextStyle? formTitleStyle,
@@ -386,8 +372,6 @@ class LoginViewTheme {
     bool? showLoadingSocialButton,
     Color? loadingButtonColor,
     Color? loadingSocialButtonColor,
-<<<<<<< HEAD
-=======
     EdgeInsets? titlePadding,
     EdgeInsets? descriptionPadding,
     EdgeInsets? changeActionPadding,
@@ -397,7 +381,6 @@ class LoginViewTheme {
     EdgeInsets? formTitlePadding,
     EdgeInsets? actionButtonPadding,
     List<AnimatedComponent>? animatedComponentOrder,
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   }) =>
       LoginViewTheme(
         formTitleStyle: formTitleStyle ?? this.formTitleStyle,
@@ -473,8 +456,6 @@ class LoginViewTheme {
         loadingButtonColor: loadingButtonColor ?? this.loadingButtonColor,
         loadingSocialButtonColor:
             loadingSocialButtonColor ?? this.loadingSocialButtonColor,
-<<<<<<< HEAD
-=======
         titlePadding: titlePadding ?? this.titlePadding,
         descriptionPadding: descriptionPadding ?? this.descriptionPadding,
         changeActionPadding: changeActionPadding ?? this.changeActionPadding,
@@ -486,6 +467,5 @@ class LoginViewTheme {
         actionButtonPadding: actionButtonPadding ?? this.actionButtonPadding,
         animatedComponentOrder:
             animatedComponentOrder ?? this.animatedComponentOrder,
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
       );
 }

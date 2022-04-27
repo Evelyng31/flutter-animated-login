@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-<<<<<<< HEAD
-import '../models/animated_dialog_theme.dart';
-import 'login_view_theme.dart';
-=======
 import '../../animated_login.dart';
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 
 /// [LoginTheme] is the provider for all design/theme related data.
 // ignore: prefer_mixin
@@ -196,21 +191,15 @@ class LoginTheme extends LoginViewTheme with ChangeNotifier {
   @override
   double? get spacingWithoutSocial => currentTheme.spacingWithoutSocial;
 
-<<<<<<< HEAD
-=======
   @Deprecated('Use "actionButtonPadding" instead')
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   @override
   double? get spacingFormAndAction => currentTheme.spacingFormAndAction;
 
   @override
   EdgeInsets? get forgotPasswordPadding => currentTheme.forgotPasswordPadding;
 
-<<<<<<< HEAD
-=======
   @Deprecated(
       'Use "changeActionPadding" or "changeActionButtonPadding" instead')
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   @override
   double? get actionAndChangeActionSpacing =>
       currentTheme.actionAndChangeActionSpacing;
@@ -235,10 +224,6 @@ class LoginTheme extends LoginViewTheme with ChangeNotifier {
 
   @override
   Color? get loadingButtonColor => currentTheme.loadingButtonColor;
-<<<<<<< HEAD
-  @override
-  Color? get loadingSocialButtonColor => currentTheme.loadingSocialButtonColor;
-=======
 
   @override
   Color? get loadingSocialButtonColor => currentTheme.loadingSocialButtonColor;
@@ -271,5 +256,4 @@ class LoginTheme extends LoginViewTheme with ChangeNotifier {
   @override
   List<AnimatedComponent> get animatedComponentOrder =>
       currentTheme.animatedComponentOrder;
->>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 }
