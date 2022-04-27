@@ -1,4 +1,32 @@
 # Versions
+<<<<<<< HEAD
+=======
+
+## [1.5.1] - 18.02.2022
+
+* Fixed wrong ss gif.
+
+## [1.5.0] - 18.02.2022
+
+* Fixed small bugs
+* Resolved focus and text form value issues
+* Default padding value adjustments
+* Renewed walk through videos
+
+## [1.4.1] - 13.02.2022
+
+* Fixed deprecated warnings
+
+## [1.4.0] - 12.02.2022
+
+* Extracted main components as widgets
+* Enabled custom ordering of the screen elements
+* Wrapped most elements with padding to enable custom margins around the components
+* Collected auth operations in auth provider and minimized business on view files
+* Optimizations on example app
+* Screen size adjustments
+
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 ## [1.3.0] - 28.01.2022
 
 * Loading indicators are integrated to the buttons instead of dialogs.

@@ -6,6 +6,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+<<<<<<< HEAD
+=======
+import 'src/constants/enums/animation_type.dart';
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 import 'src/src_shelf.dart';
 
 export 'src/constants/enums/enums_shelf.dart';
@@ -21,7 +25,10 @@ part 'src/widgets/welcome_components.dart';
 class AnimatedLogin extends StatefulWidget {
   /// Default constructor for [AnimatedLogin].
   const AnimatedLogin({
+<<<<<<< HEAD
     this.showSignUpButton = true,
+=======
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     this.loginDesktopTheme,
     this.loginMobileTheme,
     this.loginTexts,
@@ -31,8 +38,15 @@ class AnimatedLogin extends StatefulWidget {
     this.onForgotPassword,
     this.formKey,
     this.checkError = true,
+<<<<<<< HEAD
     this.showForgotPassword = true,
     this.showChangeActionTitle = true,
+=======
+    @Deprecated('Instead prefer to use componentOrder to not show some parts.')
+        this.showForgotPassword = true,
+    @Deprecated('Instead prefer to use componentOrder to not show some parts.')
+        this.showChangeActionTitle = true,
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     this.showPasswordVisibility = true,
     this.nameValidator,
     this.emailValidator,
@@ -65,9 +79,12 @@ class AnimatedLogin extends StatefulWidget {
             """To use change language button, you should provide both callback and language options."""),
         super(key: key);
 
+<<<<<<< HEAD
   /// Indicates whether the Sign Up option is enable.
   final bool showSignUpButton;      
 
+=======
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   /// Determines all of the theme related variables for *DESKTOP* view.
   /// Example: colors, text styles, button styles.
   final LoginViewTheme? loginDesktopTheme;
@@ -100,9 +117,17 @@ class AnimatedLogin extends StatefulWidget {
   final bool checkError;
 
   /// Indicates whether the forgot password option will be enabled.
+<<<<<<< HEAD
   final bool showForgotPassword;
 
   /// Indicates whether the change action title should be displayed.
+=======
+  @Deprecated('Instead prefer to use componentOrder to not show some parts.')
+  final bool showForgotPassword;
+
+  /// Indicates whether the change action title should be displayed.
+  @Deprecated('Instead prefer to use componentOrder to not show some parts.')
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   final bool showChangeActionTitle;
 
   /// Indicates whether the user can show the password text without obscuring.
@@ -178,6 +203,12 @@ class AnimatedLogin extends StatefulWidget {
 }
 
 class _AnimatedLoginState extends State<AnimatedLogin> {
+<<<<<<< HEAD
+=======
+  late final GlobalKey<FormState> _formKey =
+      widget.formKey ?? GlobalKey<FormState>();
+
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   @override
   Widget build(BuildContext context) {
     /// Background color of whole screen for mobile view,
@@ -200,6 +231,22 @@ class _AnimatedLoginState extends State<AnimatedLogin> {
             socialLogins: widget.socialLogins,
             initialMode: widget.initialMode,
             onAuthModeChange: widget.onAuthModeChange,
+<<<<<<< HEAD
+=======
+            signUpMode: widget.signUpMode,
+            formKey: _formKey,
+            showPasswordVisibility: widget.showPasswordVisibility,
+            nameController: widget.nameController,
+            emailController: widget.emailController,
+            passwordController: widget.passwordController,
+            confirmPasswordController: widget.confirmPasswordController,
+            nameValidator: widget.nameValidator,
+            emailValidator: widget.emailValidator,
+            passwordValidator: widget.passwordValidator,
+            validateName: widget.validateName,
+            validateEmail: widget.validateEmail,
+            validatePassword: widget.validatePassword,
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
           ),
         ),
       ],
@@ -228,6 +275,7 @@ class _AnimatedLoginState extends State<AnimatedLogin> {
 
   Widget get _safeArea => SafeArea(
         child: _View(
+<<<<<<< HEAD
           showSignUpButton: widget.showSignUpButton,
           formKey: widget.formKey,
           checkError: widget.checkError,
@@ -250,12 +298,20 @@ class _AnimatedLoginState extends State<AnimatedLogin> {
           validateName: widget.validateName,
           validateEmail: widget.validateEmail,
           validatePassword: widget.validatePassword,
+=======
+          formKey: _formKey,
+          backgroundImage: widget.backgroundImage,
+          logo: widget.logo,
+          languageOptions: widget.languageOptions,
+          changeLanguageCallback: widget.changeLanguageCallback,
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
           changeLangDefaultOnPressed: widget.changeLangDefaultOnPressed,
         ),
       );
 }
 
 class _View extends StatefulWidget {
+<<<<<<< HEAD
   /// Draws the main view of the screen by using [_FormPart],
   /// [_LogoAndTexts], [_ChangeActionTitle] and [_ChangeActionButton]
   const _View({
@@ -281,10 +337,25 @@ class _View extends StatefulWidget {
     this.validateName = true,
     this.validateEmail = true,
     this.validatePassword = true,
+=======
+  /// Draws the main view of the screen by using [_Form],
+  /// [_Logo], [_Title], [_Description] [_ChangeActionTitle],
+  /// and [_ChangeActionButton].
+  const _View({
+    required this.formKey,
+    this.showForgotPassword = true,
+    this.showChangeActionTitle = true,
+    this.backgroundImage,
+    this.logo,
+    this.languageOptions = const <LanguageOption>[],
+    this.changeLanguageCallback,
+    this.changeLangOnPressed,
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     this.changeLangDefaultOnPressed,
     Key? key,
   }) : super(key: key);
 
+<<<<<<< HEAD
   final bool showSignUpButton;
   final GlobalKey<FormState>? formKey;
   final bool checkError;
@@ -298,16 +369,26 @@ class _View extends StatefulWidget {
   final String? backgroundImage;
   final Widget? logo;
   final SignUpModes signUpMode;
+=======
+  final GlobalKey<FormState> formKey;
+  final bool showForgotPassword;
+  final bool showChangeActionTitle;
+  final String? backgroundImage;
+  final Widget? logo;
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   final List<LanguageOption> languageOptions;
   final ChangeLanguageCallback? changeLanguageCallback;
   final ChangeLangOnPressedCallback? changeLangOnPressed;
   final VoidCallback? changeLangDefaultOnPressed;
+<<<<<<< HEAD
   final ValidatorModel? nameValidator;
   final ValidatorModel? emailValidator;
   final ValidatorModel? passwordValidator;
   final bool validateName;
   final bool validateEmail;
   final bool validatePassword;
+=======
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
 
   @override
   __ViewState createState() => __ViewState();
@@ -336,11 +417,21 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
   late Auth auth;
 
   /// The optional custom form key, if not provided will be created locally.
+<<<<<<< HEAD
   late final GlobalKey<FormState> formKey =
       widget.formKey ?? GlobalKey<FormState>();
 
   bool _isLandscape = true;
 
+=======
+  late final GlobalKey<FormState> formKey = widget.formKey;
+
+  bool _isLandscape = true;
+
+  /// Transition animation that will change the location of the form part.
+  late Animation<double> transitionAnimation;
+
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   @override
   void initState() {
     super.initState();
@@ -354,6 +445,13 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
   @override
   void dispose() {
     animationController.dispose();
+<<<<<<< HEAD
+=======
+    auth.nameController.dispose();
+    auth.emailController.dispose();
+    auth.passwordController.dispose();
+    auth.confirmPasswordController.dispose();
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     super.dispose();
   }
 
@@ -383,6 +481,7 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
   Widget get _mobileView => Stack(
         children: <Widget>[
           Center(
+<<<<<<< HEAD
             child: ListView(
               shrinkWrap: true,
               padding: EdgeInsets.symmetric(
@@ -390,6 +489,21 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
                 horizontal: dynamicSize.width * 7,
               ),
               children: _mobileChildren,
+=======
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: dynamicSize.height,
+                horizontal: dynamicSize.width * 7,
+              ),
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: _children(_orderedMobileComponents),
+                ),
+              ),
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
             ),
           ),
           if (widget.changeLanguageCallback != null &&
@@ -398,6 +512,7 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
             _changeLanguage,
         ],
       );
+<<<<<<< HEAD
   List<Widget> get _mobileChildren => <Widget>[
         _welcomeAnimationWrapper(_LogoAndTexts(logo: widget.logo)),
         _formPart,
@@ -412,6 +527,20 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
       ];
 
   Widget _welcomeAnimationWrapper(Widget extChild) => AnimatedBuilder(
+=======
+
+  Widget get _changeAction => _isLandscape
+      ? _ChangeActionButton(animate: () async => _animate(context))
+      : _ChangeActionTitle(
+          showButtonText: true, animate: () => _animate(context));
+
+  Widget _mobileWrapper(AnimationType animationType, Widget child) =>
+      animationType == AnimationType.left
+          ? _leftAnimation(child)
+          : _rightAnimation(child);
+
+  Widget _leftAnimation(Widget extChild) => AnimatedBuilder(
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
         animation: welcomeTransitionAnimation,
         child: extChild,
         builder: (BuildContext context, Widget? child) => Transform.translate(
@@ -421,6 +550,18 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
         ),
       );
 
+<<<<<<< HEAD
+=======
+  Widget _rightAnimation(Widget child) => AnimatedBuilder(
+        animation: transitionAnimation,
+        child: child,
+        builder: (BuildContext context, Widget? _child) => Transform.translate(
+          offset: Offset(dynamicSize.width * transitionAnimation.value, 0),
+          child: _child,
+        ),
+      );
+
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   Widget get _animatedWebWelcome => AnimatedBuilder(
         animation: animationController,
         child: _webWelcomeChild,
@@ -451,6 +592,7 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
         padding: context.read<LoginTheme>().welcomePadding ??
             DynamicSize(context).medHighHorizontalPadding,
         child: Column(
+<<<<<<< HEAD
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             _LogoAndTexts(logo: widget.logo),
@@ -464,6 +606,82 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
         ),
       );
 
+=======
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: _children(_orderedWelcomeComponents)),
+      );
+
+  List<Widget> _children(
+      Widget? Function(AnimatedComponent component) callback) {
+    final List<Widget> items = <Widget>[];
+    for (final AnimatedComponent component
+        in loginTheme.animatedComponentOrder) {
+      final Widget? foundComponent = callback(component);
+      if (foundComponent == null) continue;
+      items.add(foundComponent);
+    }
+    return items;
+  }
+
+  Widget? _orderedWelcomeComponents(AnimatedComponent component) {
+    switch (component.component) {
+      case LoginComponents.logo:
+        return _isLandscape
+            ? _Logo(logo: widget.logo)
+            : _mobileWrapper(component.animationType, _Logo(logo: widget.logo));
+      case LoginComponents.title:
+        return _isLandscape
+            ? const _Title()
+            : _mobileWrapper(component.animationType, const _Title());
+      case LoginComponents.description:
+        return _isLandscape
+            ? const _Description()
+            : _mobileWrapper(component.animationType, const _Description());
+      case LoginComponents.notHaveAnAccount:
+        return _isLandscape
+            ? _ChangeActionTitle()
+            : _mobileWrapper(component.animationType, _ChangeActionTitle());
+      case LoginComponents.changeActionButton:
+        return _isLandscape
+            ? _changeAction
+            : _mobileWrapper(component.animationType, _changeAction);
+      default:
+        return null;
+    }
+  }
+
+  Widget? _orderedMobileComponents(AnimatedComponent component) {
+    switch (component.component) {
+      case LoginComponents.notHaveAnAccount:
+        return null;
+      case LoginComponents.socialLogins:
+        if (auth.socialLogins != null && auth.socialLogins!.isNotEmpty) {
+          return _mobileWrapper(
+              component.animationType, const _SocialLoginOptions());
+        }
+        return null;
+      case LoginComponents.useEmail:
+        if (auth.socialLogins != null && auth.socialLogins!.isNotEmpty) {
+          return _mobileWrapper(component.animationType, const _UseEmailText());
+        }
+        return null;
+      case LoginComponents.form:
+        return _mobileWrapper(component.animationType, const _Form());
+      case LoginComponents.forgotPassword:
+        return context.select<Auth, bool>((Auth auth) => auth.isReverse) &&
+                widget.showForgotPassword
+            ? _mobileWrapper(component.animationType, const _ForgotPassword())
+            : Container();
+      case LoginComponents.actionButton:
+        return _mobileWrapper(component.animationType, const _ActionButton());
+      default:
+        final Widget? foundInWelcome = _orderedWelcomeComponents(component);
+        if (foundInWelcome != null) return foundInWelcome;
+    }
+    return null;
+  }
+
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   Widget get _changeLanguage => Positioned(
         top: dynamicSize.responsiveSize * 6,
         right: dynamicSize.responsiveSize * 8,
@@ -476,6 +694,7 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
         ),
       );
 
+<<<<<<< HEAD
   Widget get _formPart => _FormPart(
         animationController: animationController,
         formKey: formKey,
@@ -498,6 +717,15 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
   void _animate(BuildContext context) {
     if (formKey.currentState != null) {
       formKey.currentState!.reset();
+=======
+  Widget get _formPart => _WebForm(
+      animationController: animationController,
+      showForgotPassword: widget.showForgotPassword);
+
+  void _animate(BuildContext context) {
+    if (!context.read<LoginTheme>().isLandscape) {
+      FocusManager.instance.primaryFocus?.unfocus();
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
     }
     animationController.isCompleted
         ? animationController.reverse()
@@ -539,6 +767,23 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
         }
       }
     });
+<<<<<<< HEAD
+=======
+
+    /// Initializes the transition animation from welcome part's width ratio
+    /// to 0 with custom animation curve and animation controller.
+    transitionAnimation = _isLandscape
+        ? Tween<double>(begin: 100 - loginTheme.formWidthRatio, end: 0).animate(
+            CurvedAnimation(
+              parent: animationController,
+              curve: loginTheme.animationCurve,
+            ),
+          )
+        : AnimationHelper(
+            animationController: animationController,
+            animationCurve: loginTheme.animationCurve,
+          ).tweenSequenceAnimation(120, 20);
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   }
 
   bool get _forwardCheck =>

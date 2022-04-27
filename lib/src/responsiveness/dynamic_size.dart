@@ -103,6 +103,12 @@ class DynamicSize {
   /// Low-medium bottom padding.
   EdgeInsets get lowMedBottomPadding => EdgeInsets.only(bottom: lowMedHeight);
 
+<<<<<<< HEAD
+=======
+  /// Low bottom padding.
+  EdgeInsets get lowBottomPadding => EdgeInsets.only(bottom: lowHeight);
+
+>>>>>>> 15afffa4778b068a51a25368018e9755cabf80f5
   /// Maximum height of the screen.
   double get maxPossibleHeight => _mediaQuery.size.height;
 
