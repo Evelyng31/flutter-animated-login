@@ -31,6 +31,7 @@ class AnimatedLogin extends StatefulWidget {
     this.onForgotPassword,
     this.formKey,
     this.checkError = true,
+    this.showLoginError = false,
     this.showForgotPassword = true,
     this.showChangeActionTitle = true,
     this.showPasswordVisibility = true,
@@ -98,6 +99,9 @@ class AnimatedLogin extends StatefulWidget {
   /// Indicates whether the login screen should handle errors,
   /// show the error messages returned from the callbacks in a dialog.
   final bool checkError;
+
+  ///Indicate whether to show login error option will be enabled.
+  final bool showLoginError;
 
   /// Indicates whether the forgot password option will be enabled.
   final bool showForgotPassword;
@@ -231,6 +235,7 @@ class _AnimatedLoginState extends State<AnimatedLogin> {
           showSignUpButton: widget.showSignUpButton,
           formKey: widget.formKey,
           checkError: widget.checkError,
+          showLoginError: widget.showLoginError,
           showForgotPassword: widget.showForgotPassword,
           showChangeActionTitle: widget.showChangeActionTitle,
           showPasswordVisibility: widget.showPasswordVisibility,
@@ -262,6 +267,7 @@ class _View extends StatefulWidget {
     this.showSignUpButton = true,
     this.formKey,
     this.checkError = true,
+    this.showLoginError = true,
     this.showForgotPassword = true,
     this.showChangeActionTitle = true,
     this.showPasswordVisibility = true,
@@ -288,6 +294,7 @@ class _View extends StatefulWidget {
   final bool showSignUpButton;
   final GlobalKey<FormState>? formKey;
   final bool checkError;
+  final bool showLoginError;
   final bool showForgotPassword;
   final bool showChangeActionTitle;
   final bool showPasswordVisibility;
@@ -481,6 +488,7 @@ class __ViewState extends State<_View> with SingleTickerProviderStateMixin {
         formKey: formKey,
         checkError: widget.checkError,
         showForgotPassword: widget.showForgotPassword,
+        showLoginError: widget.showLoginError,
         showPasswordVisibility: widget.showPasswordVisibility,
         nameController: widget.nameController,
         emailController: widget.emailController,

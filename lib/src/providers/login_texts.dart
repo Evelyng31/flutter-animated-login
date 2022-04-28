@@ -16,6 +16,7 @@ class LoginTexts extends ChangeNotifier {
     String? login,
     String? loginFormTitle,
     String? loginUseEmail,
+    String? loginError,
     String? forgotPassword,
     String? notHaveAnAccount,
     String? alreadyHaveAnAccount,
@@ -37,6 +38,7 @@ class LoginTexts extends ChangeNotifier {
         _login = login,
         _loginFormTitle = loginFormTitle,
         _loginUseEmail = loginUseEmail,
+        _loginError = loginError,
         _forgotPassword = forgotPassword,
         _notHaveAnAccount = notHaveAnAccount,
         _alreadyHaveAnAccount = alreadyHaveAnAccount,
@@ -105,6 +107,11 @@ class LoginTexts extends ChangeNotifier {
   /// Default value is given in [_defaultForgotPassword].
   /// Custom value in the constructor is assigned to [_forgotPassword].
   String get forgotPassword => _forgotPassword ?? _defaultForgotPassword;
+
+  /// Login error text for login mode.
+  /// Default value is given in [_defaultLoginError].
+  /// Custom value in the constructor is assigned to [_loginError].
+  String get loginError => _loginError ?? _defaultLoginError;
 
   /// Text above the sign up button to direct users who don't have an account.
   /// Default value is given in [_defaultnotHaveAnAccount].
@@ -176,6 +183,8 @@ class LoginTexts extends ChangeNotifier {
   static const String _defaultEmailHint = 'Email';
   static const String _defaultPasswordHint = 'Password';
   static const String _defaultConfirmPasswordHint = 'Confirm Password';
+  static const String _defaultLoginError = 
+      'Username or Password entered is incorrect';
 
   static const String _defaultPasswordMatchingError =
       'The passwords you entered do not match, check again.';
@@ -211,6 +220,10 @@ class LoginTexts extends ChangeNotifier {
   /// Go back button's label. Go back button is used to go back to to
   /// login/signup form from the recover password form
   final String? _loginUseEmail;
+
+  /// The error message to show when the confirm login not match with the
+  /// original password
+  final String? _loginError;
 
   /// The error message to show when the confirm password not match with the
   /// original password

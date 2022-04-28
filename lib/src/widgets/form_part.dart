@@ -6,6 +6,7 @@ class _FormPart extends StatefulWidget {
     required this.animationController,
     required this.checkError,
     required this.showForgotPassword,
+    required this.showLoginError,
     required this.showPasswordVisibility,
     required this.signUpMode,
     required this.formKey,
@@ -30,6 +31,9 @@ class _FormPart extends StatefulWidget {
 
   /// Indicates whether the text form fields should show error messages.
   final bool checkError;
+
+  /// Indicate whether the login error option will be enable.
+  final bool showLoginError;
 
   /// Indicates whether the forgot password option will be enabled.
   final bool showForgotPassword;
@@ -392,7 +396,8 @@ class __FormPartState extends State<_FormPart> {
             onChanged: auth.setConfirmPassword,
             validator: _passwordValidator,
           ),
-        if (_isReverse && widget.showForgotPassword) _forgotPassword,
+        if (_isReverse && widget.showLoginError) _showLoginError,
+        if(_isReverse && widget.showForgotPassword) _forgotPassword,
       ];
 
   FormFieldValidator<String?>? get _nameValidator => widget.validateName
@@ -417,6 +422,20 @@ class __FormPartState extends State<_FormPart> {
                 ),
           ).password)
       : null;
+
+    Widget get _showLoginError => Container(
+        alignment: _isLandscape ? Alignment.center : Alignment.topCenter,
+        padding: loginTheme.forgotPasswordPadding ??
+            (_isLandscape
+                ? dynamicSize.lowTopPadding
+                : dynamicSize.lowMedBottomPadding),
+        child: Text(
+          loginTexts.loginError,
+          style: const TextStyle(
+            color: Colors.red
+          ),
+        )
+      );
 
   Widget get _forgotPassword => Container(
         alignment: _isLandscape ? Alignment.center : Alignment.topCenter,
